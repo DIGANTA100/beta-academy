@@ -1,11 +1,15 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 
 type Language = 'en' | 'bn';
 
 export const useLanguage = () => {
   const [language, setLanguage] = useState<Language>('en');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     // Get saved language from localStorage
     const saved = localStorage.getItem('beta-academy-language') as Language;
     if (saved) {
@@ -14,12 +18,14 @@ export const useLanguage = () => {
   }, []);
 
   const toggleLanguage = () => {
+    if (!mounted) return;
     const newLang: Language = language === 'en' ? 'bn' : 'en';
     setLanguage(newLang);
     localStorage.setItem('beta-academy-language', newLang);
   };
 
   const setLang = (lang: Language) => {
+    if (!mounted) return;
     setLanguage(lang);
     localStorage.setItem('beta-academy-language', lang);
   };

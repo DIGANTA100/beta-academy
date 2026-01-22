@@ -1,36 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-slate-50 text-slate-900;
-  }
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  @apply bg-slate-100;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-slate-300 rounded-lg;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-slate-400;
-}
-
-/* Smooth transitions */
-* {
-  @apply transition-colors duration-150;
-}
-

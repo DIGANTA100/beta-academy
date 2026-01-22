@@ -16,7 +16,7 @@ export const LanguageToggle: React.FC = () => {
       className="flex items-center space-x-2"
     >
       <Globe className="w-4 h-4" />
-      <span className="font-semibold">{language === 'en' ? 'EN' : 'বাং'}</span>
+      <span className="font-semibold uppercase">{language}</span>
     </Button>
   );
 };
